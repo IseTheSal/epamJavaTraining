@@ -22,4 +22,12 @@ public class Square {
     public double getSide() {
         return Math.sqrt(area);
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Square{");
+        sb.append("area=").append(area);
+        sb.append('}');
+        return sb.toString();
+    }
 }

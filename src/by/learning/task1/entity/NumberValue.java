@@ -36,8 +36,9 @@ public class NumberValue {
 
     @Override
     public String toString() {
-        return "NumberValue{" +
-                "a=" + a +
-                '}';
+        final StringBuilder sb = new StringBuilder("NumberValue{");
+        sb.append("a=").append(a);
+        sb.append('}');
+        return sb.toString();
     }
 }

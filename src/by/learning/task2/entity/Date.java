@@ -47,10 +47,11 @@ public class Date {
 
     @Override
     public String toString() {
-        return "Date{" +
-                "year=" + year +
-                ", month=" + month +
-                ", day=" + day +
-                '}';
+        final StringBuilder sb = new StringBuilder("Date{");
+        sb.append("year=").append(year);
+        sb.append(", month=").append(month);
+        sb.append(", day=").append(day);
+        sb.append('}');
+        return sb.toString();
     }
 }
