@@ -26,4 +26,12 @@ public class Circle {
     public double getCircumference() {
         return (2 * radius * Math.PI);
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Circle{");
+        sb.append("radius=").append(radius);
+        sb.append('}');
+        return sb.toString();
+    }
 }

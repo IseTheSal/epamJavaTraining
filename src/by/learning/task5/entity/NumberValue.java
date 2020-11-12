@@ -15,4 +15,12 @@ public class NumberValue {
     public void setValue(int value) {
         this.value = value;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("NumberValue{");
+        sb.append("value=").append(value);
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -47,10 +47,11 @@ public class DateValue {
 
     @Override
     public String toString() {
-        return "DateValue{" +
-                "hours=" + hours +
-                ", minutes=" + minutes +
-                ", seconds=" + seconds +
-                '}';
+        final StringBuilder sb = new StringBuilder("DateValue{");
+        sb.append("hours=").append(hours);
+        sb.append(", minutes=").append(minutes);
+        sb.append(", seconds=").append(seconds);
+        sb.append('}');
+        return sb.toString();
     }
 }
