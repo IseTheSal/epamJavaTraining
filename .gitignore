@@ -80,5 +80,4 @@ fabric.properties
 .idea/project-template.xml
 .idea/vcs.xml
 Training.iml
-src/
-test/
+
