@@ -1,8 +1,8 @@
 package by.learning.task1.main;
 
 import by.learning.task1.entity.NumberValue;
-import by.learning.task1.writer.NumberWriter;
 import by.learning.task1.service.ValueService;
+import by.learning.task1.writer.NumberWriter;
 
 public class Main {
 
@@ -15,7 +15,7 @@ public class Main {
         NumberValue number2 = new NumberValue();
         number2.writeFromConsole();
         int result2 = valueService.getLastSquareNumeralOfNumber(number2);
-        NumberWriter.printNumberAndResult(number2,String.valueOf(result2));
+        NumberWriter.printNumberAndResult(number2, String.valueOf(result2));
     }
 
 }

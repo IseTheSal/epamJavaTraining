@@ -1,8 +1,8 @@
 package by.learning.task6.main;
 
 import by.learning.task6.entity.DateValue;
-import by.learning.task6.writer.DateWriter;
 import by.learning.task6.service.DateService;
+import by.learning.task6.writer.DateWriter;
 
 public class Main {
 
@@ -10,6 +10,8 @@ public class Main {
         DateService dateService = new DateService();
         String timePassed = dateService.timePassed(186602);
         DateValue dateValue = dateService.parseDate(timePassed);
-        DateWriter.printDate(dateValue);
+
+        DateWriter dateWriter = new DateWriter();
+        dateWriter.printDate(dateValue.getHours(), dateValue.getMinutes(), dateValue.getSeconds());
     }
 }

@@ -19,10 +19,6 @@ public class Square {
         this.area = area;
     }
 
-    public double getSide() {
-        return Math.sqrt(area);
-    }
-
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Square{");

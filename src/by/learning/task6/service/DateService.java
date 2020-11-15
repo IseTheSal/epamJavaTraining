@@ -4,13 +4,18 @@ import by.learning.task6.entity.DateValue;
 
 public class DateService {
 
+
+    public static int secondsInHour = 3600;
+    public static int secondsInMinute = 3600;
+    public static int secondsInDay = 86400;
+
     public String timePassed(int secondsValue) {
-        while (secondsValue > 86400) {
-            secondsValue -= 86400;
+        while (secondsValue > secondsInDay) {
+            secondsValue -= secondsInDay;
         }
-        int hours = secondsValue / 3600;
-        int minutes = (secondsValue - hours * 3600) / 60;
-        int seconds = secondsValue - (hours * 3600) - (minutes * 60);
+        int hours = secondsValue / secondsInHour;
+        int minutes = (secondsValue - hours * secondsInHour) / secondsInMinute;
+        int seconds = secondsValue - (hours * secondsInHour) - (minutes * secondsInMinute);
         return hours + ":" + minutes + ":" + seconds;
     }
 

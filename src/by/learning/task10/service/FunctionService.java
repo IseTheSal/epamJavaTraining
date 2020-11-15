@@ -4,10 +4,11 @@ import by.learning.task10.writer.FunctionWriter;
 
 public class FunctionService {
 
-    public void functionCalcTan(int a, int b, int h) {
-        for (int i = a; i <= b; i += h) {
-            double result = calcTan(i);
-            FunctionWriter.printFunctionValues(i, result);
+    public void printCalcTan(int start, int end, int step) {
+        FunctionWriter functionWriter = new FunctionWriter();
+        for (int i = start; i <= end; i += step) {
+            double value = calcTan(i);
+            functionWriter.printFunctionValues(i, value);
         }
     }
 

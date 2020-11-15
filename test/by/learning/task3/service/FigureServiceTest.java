@@ -11,17 +11,19 @@ import static org.testng.Assert.*;
 public class FigureServiceTest {
 
 
-
     @Test
     public void testGetAreaOfCircumscribedInCircleSquare() {
         FigureService figureService = new FigureService();
-        Square square1 = new Square(25);
         Circle circle = new Circle();
-        circle.setRadius(figureService.getRadiusOfInscribedInSquareCircle(square1.getSide()));
-        Square square2 = new Square();
-        square2.setArea(figureService.getAreaOfCircumscribedInCircleSquare(circle.getRadius()));
-        double actual = square1.getArea() / square2.getArea();
 
+        Square square1 = new Square(25);
+        double squareSide1 = figureService.receiveSquareSide(square1.getArea());
+        circle.setRadius(figureService.receiveRadiusOfInscribedInSquareCircle(squareSide1));
+
+        Square square2 = new Square();
+        square2.setArea(figureService.receiveAreaOfCircumscribedInCircleSquare(circle.getRadius()));
+
+        double actual = square1.getArea() / square2.getArea();
         Assert.assertEquals(actual,2);
     }
 }

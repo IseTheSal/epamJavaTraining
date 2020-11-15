@@ -7,7 +7,7 @@ public class PointService {
     public Point getNearestPoint(Point a, Point b) {
         double aHypot = Math.hypot(a.getX(), a.getY());
         double bHypot = Math.hypot(b.getX(), b.getY());
-        return aHypot > bHypot ? b : a;
+        return (aHypot > bHypot ? b : a);
     }
 
 

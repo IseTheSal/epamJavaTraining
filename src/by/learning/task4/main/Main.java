@@ -1,8 +1,8 @@
 package by.learning.task4.main;
 
 import by.learning.task4.entity.NumberValue;
-import by.learning.task4.writer.NumberWriter;
 import by.learning.task4.service.NumberService;
+import by.learning.task4.writer.NumberWriter;
 
 public class Main {
 
@@ -14,6 +14,8 @@ public class Main {
 
         NumberService numberService = new NumberService();
         boolean atLeastTwoEvenNumbers = numberService.atLeastTwoEvenNumbers(a, b, c, d);
-        NumberWriter.printReport(atLeastTwoEvenNumbers);
+
+        NumberWriter numberWriter = new NumberWriter();
+        numberWriter.printReport(atLeastTwoEvenNumbers);
     }
 }

@@ -2,12 +2,21 @@ package by.learning.task3.service;
 
 public class FigureService {
 
-    public double getRadiusOfInscribedInSquareCircle(double squareSide) {
+    public double receiveRadiusOfInscribedInSquareCircle(double squareSide) {
         return squareSide;
     }
 
-    public double getAreaOfCircumscribedInCircleSquare(double circleRadius) {
-        return circleRadius * circleRadius / 2;
+    public double receiveAreaOfCircumscribedInCircleSquare(double circleRadius) {
+        return (circleRadius * circleRadius / 2);
     }
+
+    public double receiveCircleArea(double radius) {
+        return (radius * radius * Math.PI);
+    }
+
+    public double receiveSquareSide(double area) {
+        return Math.sqrt(area);
+    }
+
 
 }

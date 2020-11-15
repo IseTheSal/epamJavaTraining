@@ -19,13 +19,6 @@ public class Circle {
         this.radius = radius;
     }
 
-    public double getArea() {
-        return (radius * radius * Math.PI);
-    }
-
-    public double getCircumference() {
-        return (2 * radius * Math.PI);
-    }
 
     @Override
     public String toString() {

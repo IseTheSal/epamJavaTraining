@@ -21,7 +21,7 @@ public class NumberValue {
         while (true) {
             System.out.println("Input number: ");
             Scanner scanner = new Scanner(System.in);
-            if(scanner.hasNextInt()){
+            if (scanner.hasNextInt()) {
                 setA(scanner.nextInt());
                 break;
             } else {

@@ -1,16 +1,17 @@
 package by.learning.task2.main;
 
-import by.learning.task2.entity.Date;
-import by.learning.task2.writer.DateWriter;
+import by.learning.task2.entity.CustomDate;
 import by.learning.task2.service.DateService;
+import by.learning.task2.writer.DateWriter;
 
 public class Main {
 
     public static void main(String[] args) {
-        Date date = new Date(2132, 12);
+        CustomDate date = new CustomDate(2132, 12);
         DateService dateService = new DateService();
         boolean isLeap = dateService.dateIsLeap(date.getYear());
-        int maxDayOfMonth = dateService.getMaxDayOfMonth(date.getMonth(), isLeap);
-        DateWriter.printDateInformation(date.getYear(), date.getMonth(), isLeap, maxDayOfMonth);
+        int maxDayOfMonth = dateService.receiveMaxDayOfMonth(date.getMonth(), isLeap);
+        DateWriter dateWriter = new DateWriter();
+        dateWriter.printDateInformation(date.getYear(), date.getMonth(), isLeap, maxDayOfMonth);
     }
 }

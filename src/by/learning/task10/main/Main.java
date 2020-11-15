@@ -6,6 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         FunctionService functionService = new FunctionService();
-        functionService.functionCalcTan(3,10,3);
+        functionService.printCalcTan(3, 10, 3);
     }
 }

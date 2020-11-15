@@ -1,8 +1,8 @@
 package by.learning.task7.main;
 
 import by.learning.task7.entity.Point;
-import by.learning.task7.writer.PointWriter;
 import by.learning.task7.service.PointService;
+import by.learning.task7.writer.PointWriter;
 
 public class Main {
 
@@ -11,7 +11,8 @@ public class Main {
         Point b = new Point(-1, 4);
         PointService pointService = new PointService();
         Point nearestPoint = pointService.getNearestPoint(a, b);
-        PointWriter.printPoint(nearestPoint);
+        PointWriter pointWriter = new PointWriter();
+        pointWriter.printPoint(nearestPoint);
     }
 
 }

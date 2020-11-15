@@ -2,7 +2,7 @@ package by.learning.task5.service;
 
 public class NumberService {
 
-    public int getSumOfDivisors(int value) {
+    public int receiveSumOfDivisors(int value) {
         int sum = 0;
 
         for (int i = 1; i < value; i++) {
@@ -14,7 +14,7 @@ public class NumberService {
     }
 
     public boolean isPerfectNumber(int value) {
-        int sum = getSumOfDivisors(value);
-        return sum == value;
+        int sum = receiveSumOfDivisors(value);
+        return (sum == value);
     }
 }

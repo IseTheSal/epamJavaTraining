@@ -2,16 +2,28 @@ package by.learning.task2.service;
 
 public class DateService {
 
+    public static int longDayMonth = 31;
+    public static int shortDayMonth = 30;
+    public static int leapDay = 29;
+    public static int notLeapDay = 28;
+
+    public static int firstValueOfLeapYear = 400;
+    public static int secondValueOfLeapYear = 4;
+    public static int thirdValueOfLeapYear = 100;
+
     public boolean dateIsLeap(int year) {
-        if (year % 400 == 0) {
-            return true;
+        boolean isLeap;
+        if (year % firstValueOfLeapYear == 0) {
+            isLeap = true;
+        } else {
+            isLeap = (year % secondValueOfLeapYear == 0) && (year % thirdValueOfLeapYear != 0);
         }
-        return year % 4 == 0 && year % 100 != 0;
+        return isLeap;
     }
 
-    public int getMaxDayOfMonth(int month, boolean leap) {
+    public int receiveMaxDayOfMonth(int month, boolean leap) {
         if (month == 2) {
-            return leap ? 29 : 28;
+            return leap ? leapDay : notLeapDay;
         }
         switch (month) {
             case 1:
@@ -21,9 +33,9 @@ public class DateService {
             case 8:
             case 10:
             case 12:
-                return 31;
+                return longDayMonth;
             default:
-                return 30;
+                return shortDayMonth;
         }
     }
 }
