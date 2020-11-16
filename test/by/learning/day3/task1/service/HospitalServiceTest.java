@@ -91,7 +91,9 @@ public class HospitalServiceTest {
         patients.add(patient2);
         patients.add(patient3);
 
-        List<Patient> actual = hospitalService.receivePatientByMedicalCardRange(12345, 12346, patients);
+        int from = 12345;
+        int to = 12346;
+        List<Patient> actual = hospitalService.receivePatientByMedicalCardRange(from, to, patients);
 
         List<Patient> expected = new ArrayList<>();
         expected.add(patient2);
@@ -106,7 +108,9 @@ public class HospitalServiceTest {
         patients.add(patient2);
         patients.add(patient3);
 
-        List<Patient> actual = hospitalService.receivePatientByMedicalCardRange(12345, 12346, patients);
+        int from = 12345;
+        int to = 12346;
+        List<Patient> actual = hospitalService.receivePatientByMedicalCardRange(from, to, patients);
 
         List<Patient> expected = new ArrayList<>();
         expected.add(patient1);
