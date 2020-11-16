@@ -39,4 +39,31 @@ public class Hospital {
     public int getPatientListSize() {
         return patientList.size();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Hospital hospital = (Hospital) o;
+
+        if (address != null ? !address.equals(hospital.address) : hospital.address != null) return false;
+        return patientList != null ? patientList.equals(hospital.patientList) : hospital.patientList == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = address != null ? address.hashCode() : 0;
+        result = 31 * result + (patientList != null ? patientList.hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Hospital{");
+        sb.append("address='").append(address).append('\'');
+        sb.append(", patientList=").append(patientList);
+        sb.append('}');
+        return sb.toString();
+    }
 }
