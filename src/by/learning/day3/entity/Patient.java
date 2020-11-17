@@ -1,72 +1,55 @@
-package by.learning.day3.task1.entity;
+package by.learning.day3.entity;
 
-import java.util.ArrayList;
-import java.util.List;
+import by.learning.day3.util.PatientIdGenerator;
+
+import java.util.EnumSet;
+import java.util.Set;
 
 public class Patient {
 
-    private static int idValue = 0;
-
-    private int id;
+    private int id = PatientIdGenerator.getCurrentId();
     private String secondName;
     private String firstName;
     private String patronymic;
     private String address;
     private String phoneNumber;
-    private int medicalCardId;
-    private List<Diagnosis> diagnoses = new ArrayList<>();
-
+    private int medicalCardId = PatientIdGenerator.getCurrentMedicalCardId();
+    private Set<Diagnosis> diagnoses = EnumSet.noneOf(Diagnosis.class);
 
     public Patient() {
-        this.id = idValue;
-        idValue++;
     }
 
     public Patient(Diagnosis diagnosis) {
-        this.id = idValue;
-        idValue++;
         this.diagnoses.add(diagnosis);
     }
 
-    public Patient(List<Diagnosis> diagnosis) {
-        this.id = idValue;
-        idValue++;
+    public Patient(Set<Diagnosis> diagnosis) {
         this.diagnoses = diagnosis;
     }
 
-
-    public Patient(String secondName, String firstName, String patronymic, String address, String phoneNumber, int medicalCardId, List<Diagnosis> diagnoses) {
-        this.id = idValue;
-        idValue++;
+    public Patient(String secondName, String firstName, String patronymic, String address, String phoneNumber, Set<Diagnosis> diagnoses) {
         this.secondName = secondName;
         this.firstName = firstName;
         this.patronymic = patronymic;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.medicalCardId = medicalCardId;
         this.diagnoses = diagnoses;
     }
 
-    public Patient(String secondName, String firstName, String patronymic, String address, String phoneNumber, int medicalCardId) {
-        this.id = idValue;
-        idValue++;
+    public Patient(String secondName, String firstName, String patronymic, String address, String phoneNumber) {
         this.secondName = secondName;
         this.firstName = firstName;
         this.patronymic = patronymic;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.medicalCardId = medicalCardId;
     }
 
-    public Patient(String secondName, String firstName, String patronymic, String address, String phoneNumber, int medicalCardId, Diagnosis diagnosis) {
-        this.id = idValue;
-        idValue++;
+    public Patient(String secondName, String firstName, String patronymic, String address, String phoneNumber, Diagnosis diagnosis) {
         this.secondName = secondName;
         this.firstName = firstName;
         this.patronymic = patronymic;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.medicalCardId = medicalCardId;
         this.diagnoses.add(diagnosis);
     }
 
@@ -118,15 +101,11 @@ public class Patient {
         return medicalCardId;
     }
 
-    public void setMedicalCardId(int medicalCardId) {
-        this.medicalCardId = medicalCardId;
-    }
-
-    public List<Diagnosis> getDiagnoses() {
+    public Set<Diagnosis> getDiagnoses() {
         return diagnoses;
     }
 
-    public void setDiagnoses(List<Diagnosis> diagnoses) {
+    public void setDiagnoses(Set<Diagnosis> diagnoses) {
         this.diagnoses = diagnoses;
     }
 

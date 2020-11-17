@@ -1,7 +1,7 @@
-package by.learning.day3.task1.writer;
+package by.learning.day3.writer;
 
-import by.learning.day3.task1.entity.Hospital;
-import by.learning.day3.task1.entity.Patient;
+import by.learning.day3.entity.Hospital;
+import by.learning.day3.entity.Patient;
 
 import java.util.List;
 

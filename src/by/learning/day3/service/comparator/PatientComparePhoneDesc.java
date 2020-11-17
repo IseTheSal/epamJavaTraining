@@ -1,6 +1,6 @@
-package by.learning.day3.task1.service.comparator;
+package by.learning.day3.service.comparator;
 
-import by.learning.day3.task1.entity.Patient;
+import by.learning.day3.entity.Patient;
 
 import java.util.Comparator;
 

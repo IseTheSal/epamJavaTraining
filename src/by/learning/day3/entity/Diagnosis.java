@@ -1,4 +1,4 @@
-package by.learning.day3.task1.entity;
+package by.learning.day3.entity;
 
 public enum Diagnosis {
     HYPERTENSION,

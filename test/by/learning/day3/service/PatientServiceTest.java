@@ -1,13 +1,13 @@
-package by.learning.day3.task1.service;
+package by.learning.day3.service;
 
-import by.learning.day3.task1.entity.Diagnosis;
-import by.learning.day3.task1.entity.Patient;
+import by.learning.day3.entity.Diagnosis;
+import by.learning.day3.entity.Patient;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class PatientServiceTest {
 
-    Patient patient = new Patient("Ivanov", "Ivan", "Ivanovich", "Centralnaya 15", "+3752936789", 123412312);
+    Patient patient = new Patient("Ivanov", "Ivan", "Ivanovich", "Centralnaya 15", "+3752936789");
     PatientService patientService = new PatientService();
 
     @Test
@@ -16,7 +16,6 @@ public class PatientServiceTest {
         String expected = "Ivan Ivanov Ivanovich";
         Assert.assertEquals(actual, expected);
     }
-
 
     @Test
     public void testAddToDiagnoses() {

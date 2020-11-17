@@ -9,6 +9,6 @@ public class FunctionServiceTest {
     public void testCalcTan() {
         FunctionService functionService = new FunctionService();
         double actual = functionService.calcTan(3);
-        Assert.assertEquals(actual,-0.1425465430742778);
+        Assert.assertEquals(actual, -0.1425465430742778);
     }
 }

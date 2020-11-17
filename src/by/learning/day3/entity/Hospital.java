@@ -1,10 +1,13 @@
-package by.learning.day3.task1.entity;
+package by.learning.day3.entity;
+
+import by.learning.day3.util.HospitalIdGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Hospital {
 
+    private int id = HospitalIdGenerator.getIdGenerator();
     private String address;
     private List<Patient> patientList = new ArrayList<>();
 
@@ -18,6 +21,10 @@ public class Hospital {
         } else {
             System.out.println("List is empty");
         }
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getAddress() {

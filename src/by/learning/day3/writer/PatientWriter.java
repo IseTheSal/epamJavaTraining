@@ -1,9 +1,10 @@
-package by.learning.day3.task1.writer;
+package by.learning.day3.writer;
 
-import by.learning.day3.task1.entity.Diagnosis;
-import by.learning.day3.task1.entity.Patient;
+import by.learning.day3.entity.Diagnosis;
+import by.learning.day3.entity.Patient;
 
-import java.util.List;
+import java.util.Set;
+import java.util.StringJoiner;
 
 public class PatientWriter {
 
@@ -16,10 +17,10 @@ public class PatientWriter {
     }
 
     public void writePatientDiagnoses(Patient patient) {
-        StringBuilder diagnoses = new StringBuilder();
-        List<Diagnosis> diagnosesList = patient.getDiagnoses();
+        StringJoiner diagnoses = new StringJoiner(" ");
+        Set<Diagnosis> diagnosesList = patient.getDiagnoses();
         for (Diagnosis diagnosis : diagnosesList) {
-            diagnoses.append(diagnosis).append("\n");
+            diagnoses.add(diagnosis.name());
         }
         System.out.println("First name - " + patient.getFirstName() +
                 "\nSecond name - " + patient.getSecondName() +

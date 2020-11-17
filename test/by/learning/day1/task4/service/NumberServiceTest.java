@@ -3,7 +3,8 @@ package by.learning.day1.task4.service;
 import by.learning.day1.task4.entity.NumberValue;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 public class NumberServiceTest {
 

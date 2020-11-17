@@ -1,22 +1,25 @@
-package by.learning.day3.task1.service;
+package by.learning.day3.service;
 
-import by.learning.day3.task1.entity.Diagnosis;
-import by.learning.day3.task1.entity.Patient;
-import by.learning.day3.task1.service.comparator.*;
+import by.learning.day3.entity.Diagnosis;
+import by.learning.day3.entity.Patient;
+import by.learning.day3.service.comparator.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class HospitalService {
 
     public Patient searchPatientById(int id, List<Patient> patientList) {
         Patient patient = null;
-        for (Patient patientByIndex : patientList) {
-            if (patientByIndex.getId() == id) {
-                patient = patientByIndex;
-                break;
+        int i = 0;
+        do {
+            if (patientList.get(i).getId() == id) {
+                patient = patientList.get(i);
             }
-        }
+            i++;
+        } while (i < patientList.size());
+
         return patient;
     }
 
@@ -36,7 +39,7 @@ public class HospitalService {
     public List<Patient> receivePatientsByDiagnoses(Diagnosis diagnosis, List<Patient> patientList) {
         List<Patient> result = new ArrayList<>();
         for (Patient patient : patientList) {
-            List<Diagnosis> diagnoses = patient.getDiagnoses();
+            Set<Diagnosis> diagnoses = patient.getDiagnoses();
             if (diagnoses.contains(diagnosis)) {
                 result.add(patient);
             }
@@ -47,7 +50,7 @@ public class HospitalService {
     public int receivePatientAmountByDiagnoses(Diagnosis diagnosis, List<Patient> patientList) {
         int counter = 0;
         for (Patient patient : patientList) {
-            List<Diagnosis> diagnosesList = patient.getDiagnoses();
+            Set<Diagnosis> diagnosesList = patient.getDiagnoses();
             if (diagnosesList.contains(diagnosis)) {
                 counter++;
             }

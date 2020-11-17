@@ -21,6 +21,6 @@ public class FigureServiceTest {
         square2.setArea(figureService.receiveAreaOfCircumscribedInCircleSquare(circle.getRadius()));
 
         double actual = square1.getArea() / square2.getArea();
-        Assert.assertEquals(actual,2);
+        Assert.assertEquals(actual, 2);
     }
 }
