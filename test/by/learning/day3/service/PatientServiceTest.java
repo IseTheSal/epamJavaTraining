@@ -29,4 +29,12 @@ public class PatientServiceTest {
         boolean condition = patientService.removeFromDiagnoses(Diagnosis.ANXIETY, patient);
         Assert.assertTrue(condition);
     }
+
+    @Test
+    public void testRemoveFromDiagnosesFail(){
+        boolean condition = patientService.removeFromDiagnoses(Diagnosis.ANXIETY, patient);
+        Assert.assertFalse(condition);
+    }
+
+
 }

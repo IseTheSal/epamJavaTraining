@@ -2,7 +2,7 @@ package by.learning.day3.service;
 
 import by.learning.day3.entity.Diagnosis;
 import by.learning.day3.entity.Patient;
-import by.learning.day3.service.comparator.*;
+import by.learning.day3.entity.comparator.*;
 
 import java.util.ArrayList;
 import java.util.List;

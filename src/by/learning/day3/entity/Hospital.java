@@ -65,6 +65,7 @@ public class Hospital {
         return result;
     }
 
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Hospital{");

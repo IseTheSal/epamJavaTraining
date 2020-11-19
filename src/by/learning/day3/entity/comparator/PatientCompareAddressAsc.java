@@ -1,4 +1,4 @@
-package by.learning.day3.service.comparator;
+package by.learning.day3.entity.comparator;
 
 import by.learning.day3.entity.Patient;
 
