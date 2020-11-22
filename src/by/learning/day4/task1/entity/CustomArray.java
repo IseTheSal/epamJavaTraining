@@ -1,12 +1,12 @@
-package by.learning.day4.entity;
+package by.learning.day4.task1.entity;
 
 
 import java.util.Arrays;
 
 public class CustomArray {
 
-    int[] array;
-
+    private int[] array;
+    private boolean isSorted = false;
 
     public CustomArray(int length) {
         this.array = new int[length];
@@ -18,6 +18,14 @@ public class CustomArray {
 
     public void setArray(int[] array) {
         this.array = array;
+    }
+
+    public boolean isSorted() {
+        return isSorted;
+    }
+
+    public void setSorted(boolean sorted) {
+        isSorted = sorted;
     }
 
     public int getElement(int index) {
