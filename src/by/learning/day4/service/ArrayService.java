@@ -1,37 +1,31 @@
 package by.learning.day4.service;
 
-import java.util.Arrays;
-
 public class ArrayService {
 
-    public static void quickSort(int[] array, int low, int high) {
+    public void quickSort(int[] array, int low, int high) {
         if (array.length == 0) {
             return;
         }
-
         if (low >= high) {
             return;
         }
 
-        int middle = low + (high - low) / 2;
+        int i = low;
+        int j = high;
+        int middle = low - (high - low) / 2;
         int pivot = array[middle];
-        int i = low, j = high;
         while (i <= j) {
-            System.out.println(Arrays.toString(array));
-            while (array[i] < pivot) {
+            while (pivot > array[i]) {
                 i++;
             }
-
-            while (array[j] > pivot) {
-                j--;
+            while (pivot < array[j]) {
+                j++;
             }
 
             if (i <= j) {
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+                swapElements(array, i, j);
                 i++;
-                j--;
+                j++;
             }
         }
 
@@ -42,5 +36,16 @@ public class ArrayService {
         if (high > i) {
             quickSort(array, i, high);
         }
+    }
+
+    public void swapElements(int[] array, int i, int j) {
+        if (i > (array.length - 1) || i < 0
+                || j > (array.length - 1) || j < 0) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
     }
 }
